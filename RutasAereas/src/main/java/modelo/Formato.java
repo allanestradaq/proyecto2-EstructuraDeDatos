@@ -4,10 +4,18 @@
  */
 package modelo;
 
-/**
- *
- * @author allan
- */
-public class NewClass {
-    
+import java.util.Locale;
+
+/** Utilidad para mostrar números sin decimales innecesarios (165 en lugar de 165.0). */
+public final class Formato {
+
+    private Formato() {
+    }
+
+    public static String numero(double valor) {
+        if (valor == Math.rint(valor)) {
+            return String.valueOf((long) valor);
+        }
+        return String.format(Locale.US, "%.2f", valor);
+    }
 }

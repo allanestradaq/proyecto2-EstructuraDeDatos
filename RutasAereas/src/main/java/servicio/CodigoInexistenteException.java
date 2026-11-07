@@ -4,10 +4,10 @@
  */
 package servicio;
 
-/**
- *
- * @author allan
- */
-public class NewClass {
-    
+/** Se lanza cuando una consulta usa un código de aeropuerto que no está en el grafo. */
+public class CodigoInexistenteException extends RuntimeException {
+
+    public CodigoInexistenteException(String codigo) {
+        super("El aeropuerto '" + codigo + "' no existe");
+    }
 }

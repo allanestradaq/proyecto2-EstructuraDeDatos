@@ -5,9 +5,14 @@
 package modelo;
 
 /**
- *
- * @author allan
+ * Arista dirigida del grafo: un vuelo de origen a destino con dos pesos
+ * (duración en minutos y costo en dólares).
  */
-public class NewClass {
-    
+public record Ruta(String origen, String destino, double minutos, double costo) {
+
+    @Override
+    public String toString() {
+        return origen + " -> " + destino
+                + " (" + Formato.numero(minutos) + " min, $" + Formato.numero(costo) + ")";
+    }
 }
